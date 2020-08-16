@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended : false }))
 
 const PORT = process.env.PORT || 5000
 
+app.get('/', (req,res) => {
+    res.send('MERN API')
+})
+
 app.use('/students', require('./controllers/studentsController'))
 
 app.listen(PORT, () => {

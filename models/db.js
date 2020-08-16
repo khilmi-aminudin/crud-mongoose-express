@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
-const URl = 'mongodb://localhost:27017/studentsDB'
+const URl = 'mongodb+srv://khilmiA715:aiilMi15july@clusterforexperiments-yeals.mongodb.net/<dbname>?retryWrites=true&w=majority'
 const Students = require('./students.model')
 
-const connectDB = () => {
-    mongoose.connect(URl,{ useNewUrlParser : true, useFindAndModify : false, useUnifiedTopology : true}, err => {
+const connectDB = async () => {
+    await mongoose.connect(URl,{ useNewUrlParser : true, useFindAndModify : false, useUnifiedTopology : true}, err => {
         if(!err){
             console.log(`Connection Database is Succces on URl : ${URl}`)
         }else{
